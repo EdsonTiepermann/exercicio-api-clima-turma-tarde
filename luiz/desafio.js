@@ -1,28 +1,32 @@
-const cid = document.getElementById('cid')
-const botao = document.getElementById('botao')
-// const Data = document.getElementById('data')
-// const hora = document.getElementById('hora')
-// const temper = document.getElementById('temp')
-// const ha = document.getElementById('num')
+const cid = document.querySelector('#cid')
+const botao = document.querySelector('#botao')
+const data = document.getElementById('data')
+const hora = document.getElementById('hora')
+const temper = document.getElementById('temp')
+const ama = document.getElementById('num')
 
 
-botao.addEventListener('click', function () {
+botao.addEventListener('click',function(e) {
 
-    
-})
-let search = cid.value.replace ('', '-');
+    let soma = data+ hora + temper+ ama 
+
+let search = cid.value.replace ('','-');
 
 const options = {
     method:'get',
     mode:'cors',
-    method:'defaut'
+    cache:"default"
 }
 
-fetch(`https://api.hgbrasil.com/weather?format=json-cors&key=f2b7f386&city_name=${search}`, options)
+fetch(`https://api.hgbrasil.com/weather?format=json-cors&key=f2b7f386 &city_name${search} ${soma}`, options)
 .then(function (response) {
     response.json()
+
+
+
     .then (function (data){
         console.log(data);
+        document.getElementById('res').innerHTML='' ,data
     })
     
 })
@@ -31,3 +35,6 @@ fetch(`https://api.hgbrasil.com/weather?format=json-cors&key=f2b7f386&city_name=
     console.log('Error:' + e.message);
 
 })
+
+})
+
