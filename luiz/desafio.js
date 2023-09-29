@@ -40,8 +40,8 @@ fetch(`https://api.hgbrasil.com/weather?format=json-cors&key=f2b7f386 &city_name
 
 
     .then(function (data){
-        console.log(data);
-        showData(data)
+        // console.log(data.results);
+        showData(data.results)
     
 })
 
