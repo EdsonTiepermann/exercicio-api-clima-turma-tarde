@@ -2,6 +2,20 @@
 const cidade = document.querySelector('#cidade');
 const botao = document.querySelector('#buscar')
 
+const showData = function (result) {
+
+
+    for (const campo in result) {
+
+
+        if (document.querySelector('#'+ campo )) {
+
+
+            document.querySelector('#' + campo).value = result[campo]
+        }
+    }
+}
+
 botao.addEventListener('click', function (e){
 
     let search = cidade.value.replace('-', '');
@@ -19,14 +33,15 @@ botao.addEventListener('click', function (e){
 
         .then(function (data) {
             console.log(data);
+            showData(data);
         })
 
 
     })
 
-    /*.catch(function (e){
+    .catch(function (e){
         console.log('ERROR ' + e.message);
-    })*/
+    })
     
 
 })
