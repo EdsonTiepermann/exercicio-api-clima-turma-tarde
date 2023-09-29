@@ -1,16 +1,31 @@
-const cid = document.querySelector('#cid')
+const cid = document.querySelector('#city_name')
+const data = document.querySelector('#date')
+const tmp = document.querySelector('#description')
+const temperatura = document.querySelector('#temp')
+const hora = document.querySelector('#time')
 const botao = document.querySelector('#botao')
-const data = document.getElementById('data')
-const hora = document.getElementById('hora')
-const temper = document.getElementById('temp')
-const ama = document.getElementById('num')
 
+const showData = function (result) {
+    // o for in para tratarmos um objeto, o for in pega o resultado (result)
+    // e inserer na variável campo
+    for (const campo in result) {
+        //nesse if é verificado dinamicamente se todos os campos da api
+        // eu utilizo nos inputs
+        if (document.querySelector('#' + campo)) {
+            //pegamos dinamicamnete o elemneto dos inputs e passamos o 
+            // value dinamicamnete, dizendo que o result é um array e passando
+            // a variável campo como posição
+            document.querySelector('#' + campo).value = result[campo]
+            //console.log(campo);
+        }
+    }
+}
 
 botao.addEventListener('click',function(e) {
 
-    let soma = data+ hora + temper+ ama 
+    
 
-let search = cid.value.replace ('','-');
+let search = cid.value
 
 const options = {
     method:'get',
@@ -18,16 +33,15 @@ const options = {
     cache:"default"
 }
 
-fetch(`https://api.hgbrasil.com/weather?format=json-cors&key=f2b7f386 &city_name${search} ${soma}`, options)
+fetch(`https://api.hgbrasil.com/weather?format=json-cors&key=f2b7f386 &city_name=${search}`, options)
 .then(function (response) {
     response.json()
 
 
 
-    .then (function (data){
+    .then(function (data){
         console.log(data);
-        document.getElementById('res').innerHTML='' ,data
-    })
+        showData(data)
     
 })
 
@@ -37,4 +51,4 @@ fetch(`https://api.hgbrasil.com/weather?format=json-cors&key=f2b7f386 &city_name
 })
 
 })
-
+})
