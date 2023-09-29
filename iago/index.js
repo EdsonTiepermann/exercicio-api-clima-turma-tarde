@@ -2,10 +2,14 @@
 
 const botao = document.querySelector("#buscar");
 
+const cidade = document.querySelector("#city");
+
 botao.addEventListener("click", function (e) {
   // cep.addEventListener("blur", function (e) {
 
-  //   let search = cep.value.replace("-", "");
+  let search = city.value;
+
+  console.log(search);
 
   const options = {
     method: "GET",
@@ -14,7 +18,7 @@ botao.addEventListener("click", function (e) {
   };
 
   fetch(
-    `https://api.hgbrasil.com/weather?format=json-cors&key=11ce0614&city_name=Ponta Grossa,PR`,
+    `https://api.hgbrasil.com/weather?format=json-cors&key=11ce0614&city_name=${search}`,
     options
   )
     .then(function (response) {
@@ -22,12 +26,15 @@ botao.addEventListener("click", function (e) {
         .json()
 
         .then(function (data) {
-          console.log(data);
+          // console.log(data.results);
 
-          for (clima in data) {
-            document.getElementById("cidade").value = data["city"];
+          for (const campo in data.results) {
+            // console.log(campo);
 
-            // document.getElementById("data").value = data["data"];
+            if (document.querySelector("#" + campo)) {
+              // console.log(data.results[campo]);
+              document.querySelector("#" + campo).value = data.results[campo];
+            }
             // document.getElementById("temperatura").value = data["temperatura"];
             // document.getElementById("condicao_tempo").value =
             //   data["condicao_tempo"];
@@ -35,9 +42,8 @@ botao.addEventListener("click", function (e) {
             //   data["horacio_amanhecer"];
             // document.getElementById("horario_entardecer").value =
             //   data["horario_entardecer"];
-
-            console.log(data.results);
           }
+          // console.log(data.results);
         });
     })
 
