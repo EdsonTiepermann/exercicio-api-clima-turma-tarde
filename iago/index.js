@@ -5,7 +5,7 @@ const botao = document.querySelector("#buscar");
 const cidade = document.querySelector("#city");
 
 botao.addEventListener("click", function (e) {
-  // cep.addEventListener("blur", function (e) {
+  // botao.addEventListener("blur", function (e) {
 
   let search = city.value;
 
@@ -26,7 +26,7 @@ botao.addEventListener("click", function (e) {
         .json()
 
         .then(function (data) {
-          // console.log(data.results);
+          console.log(data.results);
 
           for (const campo in data.results) {
             // console.log(campo);

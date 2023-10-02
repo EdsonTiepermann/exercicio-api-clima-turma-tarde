@@ -3,45 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
     <title>Clima</title>
   </head>
   <body>
-    <h1>Condição do tempo</h1>
+    <div id="organizing">
+      <h1>CONDIÇÃO DO TEMPO</h1>
+      <h2>Digite cidade e UF, click Buscar!</h2>
 
-    <input style="width: 500px" type="text" id="city" placeholder="cidade" />
-    <br />
-    <input style="width: 500px" type="text" id="date" placeholder="data" />
-    <br />
-    <input
-      style="width: 500px"
-      type="text"
-      id="condition_code"
-      placeholder="temperatura"
-    />
-    <br />
-    <input
-      style="width: 500px"
-      type="text"
-      id="description"
-      placeholder="condicao do tempo"
-    />
-    <br />
-    <input
-      style="width: 500px"
-      type="text"
-      id="horario_amanhecer"
-      placeholder="horario do amanhecer"
-    />
-    <br />
-    <input
-      style="width: 500px"
-      type="text"
-      id="horario_entardecer"
-      placeholder="horario do entardecer"
-    />
-    <br />
+      <input
+        style="width: 500px"
+        type="text"
+        id="city"
+        placeholder="Cidade, UF"
+      />
+      <br />
+      <input style="width: 500px" type="text" id="date" placeholder="Data" />
+      <br />
+      <input
+        style="width: 500px"
+        type="text"
+        id="condition_code"
+        placeholder="Temperatura"
+      />
+      <br />
+      <input
+        style="width: 500px"
+        type="text"
+        id="description"
+        placeholder="Condicao do tempo"
+      />
+      <br />
+      <input
+        style="width: 500px"
+        type="text"
+        id="sunrise"
+        placeholder="Horario do amanhecer"
+      />
+      <br />
+      <input
+        style="width: 500px"
+        type="text"
+        id="sunset"
+        placeholder="Horario do entardecer"
+      />
+      <br />
 
-    <button id="buscar" type="submit" name="buscar">Buscar</button>
+      <button id="buscar" type="submit" name="buscar">Buscar</button>
+    </div>
+    <img src="../iago/imagem/four-seasons.jpg" alt="four-seasons" />
   </body>
-  <script src="index.js"></script>
+  <div>
+    <script src="index.js"></script>
+  </div>
 </html>
