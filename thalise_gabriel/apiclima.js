@@ -1,4 +1,4 @@
-        const cidade = document.querySelector('#cidade');
+        const cidade = document.querySelector('#city_name');
 
         //Pagamos o elemento do input button buscar
         const botao = document.querySelector('#buscar');
@@ -8,6 +8,7 @@
             //o for in para tratarmos um objeto, o for in pega o resultado (result)
             //e insere na variavel campo
             for(const campo in result) {
+                console.log(campo)
                 //nesse if verifico dinamicamente se todos os campos da api
                 //eu utilizo nos iguais
                 if (document.querySelector('#' + campo)){
