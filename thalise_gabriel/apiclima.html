@@ -6,27 +6,29 @@
     <title>Document</title>
 </head>
 <body>
-    <script> src='js/apiclima.js</script>
+
     <h1> API para verificar clima</h1>
+
     <div class="input-group mb-3">
         <!-- <span class="input-group-text" id="basic-addon1">Inseir um número</span> -->
-        <input type="text" id="cd" class="form-control" placeholder="Cidade">
-        <br>
-        <input type="text" id="dt" class="form-control" placeholder="Data">
-        <br>
-        <input type="text" id="ha" class="form-control" placeholder="Hora atual">
-        <br>
-        <input type="text" id="tp" class="form-control" placeholder="Temperatura">
-        <br>
-        <input type="text" id="ct" class="form-control" placeholder="Condição do tempo">
-        <br>
-        <input type="text" id="ham" class="form-control" placeholder="Horário amanhecer">
-        <br>
-        <input type="text" id="hen" class="form-control" placeholder="Horário do entardecer">
     </div>
-
-    
- 
-
+</div>
+        <input type="text" value="" id="city_name" placeholder="Cidade">
+        <br>
+        <input type="text" value="" id="condition_slug" placeholder="Condição do tempo">
+        <br>
+        <input type="text" value="" id="date" placeholder="Data">
+        <br>
+        <input type="text" value="" id="sunrise" placeholder="Horário amanhecer">
+        <br>
+        <input type="text" value="" id="sunset" placeholder="Horário do entardecer">
+        <br>
+        <input type="text" value="" id="temp" placeholder="Temperatura">
+        <br>
+        <input type="text" value="" id="time" placeholder="Hora atual">
+    </div>
+    <br>
+     <button type="button" id="buscar" value="">Buscar</button>
 </body>
+<script src='apiclima.js'></script>
 </html>
